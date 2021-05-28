@@ -1,7 +1,9 @@
 <template>
     <div>
-        <h3 @click="toggleSection" :class="{'cursor-pointer': controlSection.collapsible}">
-            {{controlSection.label}}
+        <h3 v-if="controlSection.collapsible || controlSection.label"
+            @click="toggleSection"
+            :class="{'cursor-pointer': controlSection.collapsible}">
+            #{{controlSection.collapsible}}#{{controlSection.label}}#
             <component v-if="controlSection.collapsible"
                        style="vertical-align: initial"
                        :is="chevronComponent"></component>
